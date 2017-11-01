@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div style="width: 1000px; margin: 20px auto;text-align: center">
+            <h1>主要API</h1>
+            <h2>*是必选参数</h2>
+            <h5>写了一些工具，后面开发就快一些了</h5>
+            <hr>
+            User
+            <hr>
+            <h3>注册</h3>
+            <form action="http://114.215.130.107:8080/api/user/add" method="POST" enctype="multipart/form-data"> 
+                *帐号:<input type="text" name="username"/>
+                *密码:<input type="text" name="password"/>
+                姓名:<input type="text" name="name"/>
+                手机:<input type="text" name="phone"/>
+                <input type="submit" value="提交"/>
+            </form>
+            
+            <hr>
+            <h3>登录</h3>
+            <form action="http://114.215.130.107:8080/api/user/login" method="POST" enctype="multipart/form-data"> 
+                *帐号:<input type="text" name="username"/>
+                *密码:<input type="text" name="password"/>
+                <input type="submit" value="提交"/>
+            </form>
+            
+            <hr>
+            
+<hr>
+            <h3>登出</h3>
+            <form action="http://114.215.130.107:8080/api/user/loginOut" method="POST" enctype="multipart/form-data"> 
+               
+                <input type="submit" value="提交"/>
+            </form>
+            <hr>
+            Task
+            <hr>
+            <h3>任务列表</h3>
+            <form action="http://114.215.130.107:8080/api/task/list" method="POST" enctype="multipart/form-data"> 
+                <input type="submit" value="提交"/>
+            </form>
+            
+            <hr>
+            <h3>任务分页列表</h3>
+            <form action="http://114.215.130.107:8080/api/task/pageList" method="POST" enctype="multipart/form-data"> 
+                *每页多少:<input type="text" name="pageSize"/>
+                *第几页:<input type="text" name="pageNum"/>
+                <input type="submit" value="提交"/>
+            </form>
+            
+             <hr>
+            <h3>任务详细</h3>
+            <form action="http://114.215.130.107:8080/api/task/info" method="POST" enctype="multipart/form-data"> 
+                *任务ID:<input type="text" name="id"/>
+                <input type="submit" value="提交"/>
+            </form>
+            
+            <hr>
+            <h3>添加任务</h3>
+            <form action="http://localhost:8888/api/task/add" method="POST" enctype="multipart/form-data"> 
+                <input type="file" name="file" multiple/>（txt无法上传）<br>
+                *title:<input type="text" name="title"/>
+                *gross:<input type="text" name="gross"/>
+                info:<input type="text" name="info"/>
+                typeId:<input type="text" name="typeId"/>
+                endTime:<input type="date" name="endTime"/>
+                <input type="submit" value="提交"/>
+            </form>
+            <img src="http://localhost:8888/static/taskimg/20171016173020959_12.jpg"/>
+            <hr>
+            TaskWare
+            <hr>
+            <h3>上传文件</h3>
+            <h5>图片，视频，音频，压缩包，并且后台做了一些处理，无法直接获得原始资源，但是可以展示</h5>
+            <h5>/home/geb/java/tomcat7/bin/tasks/untreat/ 是文件真实位子（可以换路径）</h5>
+            <h5>/home/geb/javaweb/ROOT/WEB-INF/classes/static/thumbnail/是文件缩略和代替的文件的位置</h5>
+            <form target="view" action="http://114.215.130.107:8080/api/taskWare/addFiles" method="POST" enctype="multipart/form-data">
+                *选择一个或多个资源<input type="file" name="files" multiple/>（txt无法上传）<br>
+                *任务ID:<input type="text" name="taskId"/>
+                上传标题:<input type="text" name="title"/>
+                上传详情<input type="text" name="info"/>
+                <input type="submit" value="提交"/>
+            </form>
+            <iframe name="view" style="position: fixed;width: 300px;left: 0px; height: 500px;top: 50px;background-color: #999900"></iframe>
+        </div>
+    </body>
+</html>
